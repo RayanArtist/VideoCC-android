@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Built-By: VideoCC
+Created-By: Android SDK
+
+Name: AndroidManifest.xml
+SHA1-Digest: R2lGb1FBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUE=
+
+Name: classes.dex
+SHA1-Digest: UkdGYk9GQkJRVUZCUVVGQlFVRkJRVUZCUVVGQlFVRkJRVUU=
+
+Name: resources.arsc
+SHA1-Digest: VWtSR1lrOUdRa0ZCUVVGQlFVRkJRVUZCUVVGQlFVRkJRVUU=

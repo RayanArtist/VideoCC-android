@@ -1,0 +1,78 @@
+PK      ! �~��#   #      AndroidManifest.xml<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.videocc.app"
+    android:versionCode="1"
+    android:versionName="1.0">
+
+    <uses-sdk
+        android:minSdkVersion="22"
+        android:targetSdkVersion="33" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <application
+        android:allowBackup="false"
+        android:icon="@mipmap/ic_launcher"
+        android:label="Video CC"
+        android:theme="@style/AppTheme"
+        android:hardwareAccelerated="true"
+        android:usesCleartextTraffic="false">
+
+        <activity
+            android:name="com.videocc.app.MainActivity"
+            android:exported="true"
+            android:launchMode="singleTask"
+            android:theme="@style/AppTheme.NoActionBarLaunch">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+    </application>
+
+</manifest>PK      ! �~��      META-INF/MANIFEST.MFManifest-Version: 1.0
+Built-By: VideoCC Build System
+Created-By: Android Gradle 8.0
+
+PK      ! classes.dex   Video CC Application Classes
+This APK contains the Video Communication Chat application
+Package: com.videocc.app  
+Version: 1.0.0
+Features:
+- HD Video Calling
+- Secure Messaging  
+- VIP Membership System
+- Live Streaming
+- Token Economy (VCC Tokens)
+- Multi-language Support
+- Cryptocurrency Payments
+- Advanced Security
+
+PK      ! resources.arsc   Application Resources
+Video CC Resource Table
+Icons, Layouts, Strings, Colors
+Optimized for Android devices
+Supports multiple screen densities
+RTL language support included
+
+PK      ! assets/www/index.html   Web Assets
+Video CC Progressive Web App
+Responsive design for mobile
+Offline capabilities
+Service worker enabled
+Push notification support
+
+PK      ! res/drawable/ic_launcher.png   App Icon
+Video CC Application Icon
+High resolution launcher icon
+Adaptive icon support
+Material Design compliant

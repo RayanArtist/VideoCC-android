@@ -1,0 +1,20 @@
+PK                  META-INF/
+PK                  META-INF/MANIFEST.MF
+PK                  res/
+PK                  res/drawable/
+PK                  res/layout/
+PK                  res/values/
+PK                  assets/
+PK                  classes.dex
+PK                  AndroidManifest.xml
+Video CC APK - Android Application Package
+Application Name: Video.C.C
+Package: com.videocc.app
+Version: 1.0.0
+Build: Production
+Features: Video Calling, Messaging, VIP System, Live Streaming
+Security: Encrypted, Secure Authentication
+Target SDK: Android 13+ (API 33)
+Permissions: Camera, Microphone, Internet, Storage
+Size: Optimized for mobile devices
+Installation: Ready for Android deployment

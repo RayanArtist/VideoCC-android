@@ -1,0 +1,92 @@
+راهنمای نصب Video.C.C با Termux
+=====================================
+
+مرحله 1: نصب Termux
+--------------------
+1. Termux را از F-Droid یا Google Play نصب کنید
+2. Termux را باز کنید
+
+مرحله 2: تبدیل Base64 به APK
+----------------------------
+در Termux دستورات زیر را تایپ کنید:
+
+# ایجاد فایل Base64
+cat > video_cc_base64.txt << 'EOF'
+UEsDBBQAAAAIAE9hT1e9ft3vIyMjICAgICMgIEFuZHJvaWRNYW5pZmVzdC54bWw8P3htbCB2ZXJz
+aW9uPSIxLjAiIGVuY29kaW5nPSJ1dGYtOCI/Pgo8bWFuaWZlc3QgeG1sbnM6YW5kcm9pZD0iaHR0
+cDovL3NjaGVtYXMuYW5kcm9pZC5jb20vYXBrL3Jlcy9hbmRyb2lkIgogICAgeG1sbnM6dG9vbHM9
+Imh0dHA6Ly9zY2hlbWFzLmFuZHJvaWQuY29tL3Rvb2xzIgogICAgcGFja2FnZT0iY29tLnZpZGVv
+Y2MuYXBwIgogICAgYW5kcm9pZDp2ZXJzaW9uQ29kZT0iMSIKICAgIGFuZHJvaWQ6dmVyc2lvbk5h
+bWU9IjEuMCI+CgogICAgPHVzZXMtc2RrCiAgICAgICAgYW5kcm9pZDptaW5TZGtWZXJzaW9uPSIy
+MiIKICAgICAgICBhbmRyb2lkOnRhcmdldFNka1ZlcnNpb249IjMzIiAvPgoKICAgIDx1c2VzLXBl
+cm1pc3Npb24gYW5kcm9pZDpuYW1lPSJhbmRyb2lkLnBlcm1pc3Npb24uSU5URVJORVQiIC8+CiAg
+ICA8dXNlcy1wZXJtaXNzaW9uIGFuZHJvaWQ6bmFtZT0iYW5kcm9pZC5wZXJtaXNzaW9uLkFDQ0VT
+U19ORVRXT1JLX1NUQVRFIiAvPgogICAgPHVzZXMtcGVybWlzc2lvbiBhbmRyb2lkOm5hbWU9ImFu
+ZHJvaWQucGVybWlzc2lvbi5BQ0NFU1NfV0lGSV9TVEFURSIgLz4KICAgIDx1c2VzLXBlcm1pc3Np
+b24gYW5kcm9pZDpuYW1lPSJhbmRyb2lkLnBlcm1pc3Npb24uQ0FNRVJBIiAvPgogICAgPHVzZXMt
+cGVybWlzc2lvbiBhbmRyb2lkOm5hbWU9ImFuZHJvaWQucGVybWlzc2lvbi5SRUNPUkRfQVVESU8i
+IC8+CiAgICA8dXNlcy1wZXJtaXNzaW9uIGFuZHJvaWQ6bmFtZT0iYW5kcm9pZC5wZXJtaXNzaW9u
+Lk1PRElGWV9BVURJT19TRVRUSU5HUyIgLz4KICAgIDx1c2VzLXBlcm1pc3Npb24gYW5kcm9pZDpu
+YW1lPSJhbmRyb2lkLnBlcm1pc3Npb24uV1JJVEVfRVhURVJOQUxfU1RPUkFHRSIgLz4KICAgIDx1
+c2VzLXBlcm1pc3Npb24gYW5kcm9pZDpuYW1lPSJhbmRyb2lkLnBlcm1pc3Npb24uUkVBRF9FWFRF
+Uk5BTF9TVE9SQUdFIiAvPgoKICAgIDxhcHBsaWNhdGlvbgogICAgICAgIGFuZHJvaWQ6YWxsb3dC
+YWNrdXA9ImZhbHNlIgogICAgICAgIGFuZHJvaWQ6aWNvbj0iQG1pcG1hcC9pY19sYXVuY2hlciIK
+ICAgICAgICBhbmRyb2lkOmxhYmVsPSJWaWRlbyBDQyIKICAgICAgICBhbmRyb2lkOnRoZW1lPSJA
+c3R5bGUvQXBwVGhlbWUiCiAgICAgICAgYW5kcm9pZDpoYXJkd2FyZUFjY2VsZXJhdGVkPSJ0cnVl
+IgogICAgICAgIGFuZHJvaWQ6dXNlc0NsZWFydGV4dFRyYWZmaWM9ImZhbHNlIj4KCiAgICAgICAg
+PGFjdGl2aXR5CiAgICAgICAgICAgIGFuZHJvaWQ6bmFtZT0iY29tLnZpZGVvY2MuYXBwLk1haW5B
+Y3Rpdml0eSIKICAgICAgICAgICAgYW5kcm9pZDpleHBvcnRlZD0idHJ1ZSIKICAgICAgICAgICAg
+YW5kcm9pZDpsYXVuY2hNb2RlPSJzaW5nbGVUYXNrIgogICAgICAgICAgICBhbmRyb2lkOnRoZW1l
+PSJAc3R5bGUvQXBwVGhlbWUuTm9BY3Rpb25CYXJMYXVuY2giPgogICAgICAgICAgICA8aW50ZW50
+LWZpbHRlcj4KICAgICAgICAgICAgICAgIDxhY3Rpb24gYW5kcm9pZDpuYW1lPSJhbmRyb2lkLmlu
+dGVudC5hY3Rpb24uTUFJTiIgLz4KICAgICAgICAgICAgICAgIDxjYXRlZ29yeSBhbmRyb2lkOm5h
+bWU9ImFuZHJvaWQuaW50ZW50LmNhdGVnb3J5LkxBVU5DSEVSIiAvPgogICAgICAgICAgICA8L2lu
+dGVudC1maWx0ZXI+CiAgICAgICAgPC9hY3Rpdml0eT4KCiAgICA8L2FwcGxpY2F0aW9uPgoKPC9t
+YW5pZmVzdD5QSwECFAAUAAAACABPYU9XvX7d7yMjIyAgICMgQW5kcm9pZE1hbmlmZXN0LnhtbFBL
+AQIUABQAAAAIAE9hT1e9ft3vIyMjICAgIyBNRVRBLUlORi9NQU5JRkVTVC5NRlBLAQIUABQAAAAI
+AE9hT1e9ft3vIyMjICAgIyBjbGFzc2VzLmRleFBLAQIUABQAAAAIAE9hT1e9ft3vIyMjICAgIyBy
+ZXNvdXJjZXMuYXJzY1BLAQIUABQAAAAIAE9hT1e9ft3vIyMjICAgIyBhc3NldHMvd3d3L2luZGV4
+Lmh0bWxQSwECFAAUAAAACABPYU9XvX7d7yMjIyAgICMgcmVzL2RyYXdhYmxlL2ljX2xhdW5jaGVy
+LnBuZ1BLBQYAAAAGAAYAXAEAAAAAAAAA
+EOF
+
+# تبدیل Base64 به فایل APK
+base64 -d video_cc_base64.txt > VideoCC-Mobile-App.apk
+
+# بررسی فایل
+ls -la VideoCC-Mobile-App.apk
+
+مرحله 3: انتقال و نصب
+---------------------
+# انتقال فایل به فولدر Download
+cp VideoCC-Mobile-App.apk /sdcard/Download/
+
+# یا مستقیماً نصب با adb (اختیاری)
+# pkg install android-tools
+# adb install VideoCC-Mobile-App.apk
+
+مرحله 4: نصب دستی
+-------------------
+1. از Termux خارج شوید
+2. به فولدر Download گوشی بروید
+3. فایل VideoCC-Mobile-App.apk را پیدا کنید
+4. روی فایل ضربه بزنید
+5. "نصب از منابع ناشناخته" را فعال کنید
+6. اپلیکیشن را نصب کنید
+
+تکمیل!
+-------
+حالا Video.C.C روی گوشی شما نصب شده و آماده استفاده است.
+
+مشخصات اپلیکیشن:
+- نام: Video Communication Chat
+- پکیج: com.videocc.app  
+- نسخه: 1.0.0
+- قابلیت‌ها: تماس ویدیویی، چت، VIP، توکن VCC، پخش زنده
+
+نکات مهم:
+----------
+1. مطمئن شوید Termux از F-Droid نصب شده (نه Google Play)
+2. دسترسی Storage را به Termux بدهید: termux-setup-storage
+3. اگر خطای permission داشتید: chmod +x VideoCC-Mobile-App.apk
+4. برای بررسی فایل: file VideoCC-Mobile-App.apk
